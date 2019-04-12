@@ -11,7 +11,7 @@ for length in range(1,6):
     for iteration in itertools.product(chars, repeat=length):
         iteration = ''.join(iteration)            
         crackAttempt = os.system('7z e {} -aoa -p{} '.format(sys.argv[1],iteration))
-        if crackAttempt == 0:
+        if crackAttempt == False:
             print " The password was: " + iteration
             exit(1)
 print 'Sorry, Password not found'
